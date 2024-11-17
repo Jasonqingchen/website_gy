@@ -2,237 +2,313 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="">
-    <title>Good Life</title>
+    <title>爱暖人间公益</title>
     <!-- 引入样式 -->
     <link rel="stylesheet" href="/vue/element-ui.min.css">
 </head>
 <style>
+    <!--底部固定-->
+    .fixed-footer {
+        position: fixed; /* 使用fixed定位 */
+        left: 0; /* 左边距设置为0 */
+        bottom: 0; /* 底部设置为0，即固定在底部 */
+        width: 100%; /* 宽度设置为100% */
+        background-color: #333; /* 背景颜色 */
+        padding: 10px; /* 内边距 */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+    }
 </style>
 <body>
 <!--html代码 -->
 </div>
 <div id="app">
-        <el-menu
-                class="el-menu-demo"
-                mode="horizontal"
-                @select="handleSelect"
-                background-color="#050505FF"
-                text-color="#FFFFFF"
-                active-text-color="#ffd04b"
-                style="font-size: 20px; text-align: center;position: fixed;z-index: 10000000; width: 100%;top:0;left: 0">
+<!--头部-->
+    <el-menu
+            class="el-menu-demo"
+            mode="horizontal"
+            background-color="#71A1D2"
+            text-color="#FFFFFF"
+            style="height: 40px; font-size: 20px; text-align: center;position: fixed;z-index: 10000000; background-color:#71A1D2;  width: 100%;top:0;left: 0">
 
-            <el-link :underline="false" href="/index" style="color: #e82c49;font-size: 35px; font-style: italic">Good Life</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/index" :underline="false" style="color: #FFFFFF;font-size: 15px;">HOME</el-link>&nbsp;&nbsp;
+        <el-link href="/index" :underline="false" style="color: #FFFFFF;font-size: 15px;">首页</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/list?p=TV" :underline="false" style="color: #FFFFFF;font-size: 15px;">TV</el-link>&nbsp;&nbsp;
+        <el-link href="/list?p=TV" :underline="false" style="color: #FFFFFF;font-size: 15px;">我们的工作</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/list?p=GasStove" :underline="false" style="color: #FFFFFF;font-size: 15px;">Gas Stove</el-link>&nbsp;&nbsp;
+        <el-link href="/list?p=GasStove" :underline="false" style="color: #FFFFFF;font-size: 15px;">部门岗位</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/list?p=Audio" :underline="false" style="color: #FFFFFF;font-size: 15px;">Audio</el-link>&nbsp;&nbsp;
+        <el-link href="/list?p=Audio" :underline="false" style="color: #FFFFFF;font-size: 15px;">公益项目</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/list?p=ElectricKettles" :underline="false" style="color: #FFFFFF;font-size: 15px;">Electric Kettles</el-link>&nbsp;&nbsp;
+        <el-link href="/list?p=ElectricKettles" :underline="false" style="color: #FFFFFF;font-size: 15px;">价值观</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/list?p=ElectricIron" :underline="false" style="color: #FFFFFF;font-size: 15px;">Electric Iron</el-link>&nbsp;&nbsp;
+        <el-link href="/list?p=ElectricIron" :underline="false" style="color: #FFFFFF;font-size: 15px;">公益项目</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/list?p=Ovens" :underline="false" style="color: #FFFFFF;font-size: 15px;">Ovens</el-link>&nbsp;&nbsp;
+        <el-link href="/list?p=Ovens" :underline="false" style="color: #FFFFFF;font-size: 15px;">公益轨迹</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <el-link href="/list?p=Juicers" :underline="false" style="color: #FFFFFF;font-size: 15px;">Juicers</el-link>&nbsp;&nbsp;
+    </el-menu><br><br><br><br><br><br><br><br>
+    <el-row>
+        <el-col :span="24" style="text-align: left"><div style="display: inline-block;width: 10px; height: 30px; background-color: #1E9FFF"></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style="display: inline-block;font-size: 30px; font-family: 'Microsoft YaHei';"
+        > 部门岗位
+        </div></el-col>
+    </el-row>
 
-            <el-link href="/list?p=Solarlighting" :underline="false" style="color: #FFFFFF;font-size: 15px;">Solar lighting</el-link>&nbsp;&nbsp;
-
-            <!--<i class="el-icon-search" style="color: #FFFFFF;font-size: 15px;"></i>&nbsp;&nbsp;
-
-            <span><el-input v-model="proname" placeholder="enter product name please "></el-input></span>-->
-            <div style="margin-top: 15px; width: 100%; background-color: #0C0C0C">
-                <el-input placeholder="enter product name please" v-model="proname" clearable class="input-with-select">
-                    <el-button slot="append" icon="el-icon-search" @click="search()">search</el-button>
+    <br>
+    <el-row>
+        <el-col :span="24">
+            <el-card class="box-card" style="background-color: #ECECEC;">
+                <el-row>
+                    <el-col :span="4">
+                        <el-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" description="个人"></el-empty>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"description="活动"></el-empty>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"description="点赞"></el-empty>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"description="主页"></el-empty>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"description="邮件"></el-empty>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"description="文件"></el-empty>
+                    </el-col>
+                </el-row>
+            </el-card>
+        </el-col>
+    </el-row>
+    <br>
+    <el-row>
+        <el-col :span="24" style="text-align: left"><div style="display: inline-block;width: 10px; height: 30px; background-color: #1E9FFF"></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style="display: inline-block;font-size: 30px; font-family: 'Microsoft YaHei';"
+        > 公益项目
+        </div></el-col>
+    </el-row>
+    <br>
+    <el-row>
+        <el-col :span="12"> <el-image
+                style="width: 100%;height: 300px;"
+                src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+                fit="fit"></el-image>
+        </el-col>
+        <el-col :span="12">
+            &nbsp;&nbsp;
+            <div style="display: inline-block; background-color: #c9ced5;text-align: center;width: 8%;"><span style=" font-size: 20px;">13</span><br><span style="font-size: 10px;">2024-5</span></div>
+            <div style="height: 40px;display: inline-block; width: 80%;">
+                <el-input :disabled="true" placeholder="萨克大开杀戒打卡金坷垃手机打卡鲸打卡垃圾的卡垃圾费山卡拉鲸打卡垃圾的卡拉萨鲸打卡拉萨鲸打卡啦随机发拉卡萨阿萨德就撒乐凯大街阿里手机打算啦" type="textarea">
                 </el-input>
-            </div>
-
-
-        </el-menu>
-    <div style="width: 100%;top:0;left: 0;right: 0">
-        <template>
-            <el-carousel indicator-position="outside"  height="700px" >
-                <el-carousel-item v-for="(item,i) in this.item" :key="i">
-                    <el-image
-                            style="width: 100%"
-                            :src=item
-                    ></el-image>
-                </el-carousel-item>
-            </el-carousel>
-        </template>
-    </div>
-
-
-    <div style="text-align: center;margin-left: 35%;">
-        <div id="main" style="width: 500px;height: 200px;"></div>
-    </div>
-    <!--产品-->
-    <el-link type="danger"></el-link>
-    <template>
-        <div>
-            <span style="color: darkred;margin-left: 15%;"> <strong>FEATURED PRODUCTS</strong></span>
-            <el-divider></el-divider>
-        </div>
-    </template>
-    <!--图片-->
-    <!--<div style="text-align: center;margin-left: 15%;">
-    <el-row :gutter="20">
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="	http://www.clfgoodlife.com/Uploads/65449fde9a585.jpg" description="Product description: Portable Mucti-function Self Cleaning Variable Burst Steam Spray Auto-Off Thermal Fuse Cut-out Electric Iron Generator"></el-empty></div></el-col>
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="http://www.clfgoodlife.com/Uploads/6544a0d413f55.jpg" description="Product description: Factory wholesale steam iron for home use"></el-empty></div></el-col>
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="http://www.clfgoodlife.com/Uploads/6544a2d36f983.jpg" description="Product description: China factory limite electric kettle hotel kettle household electric stainless steel kettle"></el-empty></div></el-col>
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="http://www.clfgoodlife.com/Uploads/6544a33c4ebe4.png" description="Product description: Electric Induction Kettle Heat Preservation Double Layers Water Stainless Steel"></el-empty></div></el-col>
+            </div><br><br>
+            &nbsp;&nbsp;
+            <div style="display: inline-block; background-color: #c9ced5;text-align: center;width: 8%;"><span style=" font-size: 20px;">12</span><br><span style="font-size: 10px;">2024-5</span></div>
+            <div style="height: 40px;display: inline-block; width: 80%;">
+                <el-input :disabled="true" placeholder="萨克大开杀戒打卡金坷垃手机打卡鲸打卡垃圾的卡垃圾费山卡拉鲸打卡垃圾的卡拉萨鲸打卡拉萨鲸打卡啦随机发拉卡萨阿萨德就撒乐凯大街阿里手机打算啦" type="textarea">
+                </el-input>
+            </div><br><br>
+            &nbsp;&nbsp;
+            <div style="display: inline-block; background-color: #c9ced5;text-align: center;width: 8%;"><span style=" font-size: 20px;">11</span><br><span style="font-size: 10px;">2024-5</span></div>
+            <div style="height: 40px;display: inline-block; width: 80%;">
+                <el-input :disabled="true" placeholder="萨克大开杀戒打卡金坷垃手机打卡鲸打卡垃圾的卡垃圾费山卡拉鲸打卡垃圾的卡拉萨鲸打卡拉萨鲸打卡啦随机发拉卡萨阿萨德就撒乐凯大街阿里手机打算啦" type="textarea">
+                </el-input>
+            </div><br><br>
+            &nbsp;&nbsp;
+            <div style="display: inline-block; background-color: #c9ced5;text-align: center;width: 8%;"><span style=" font-size: 20px;">10</span><br><span style="font-size: 10px;">2024-5</span></div>
+            <div style="height: 40px;display: inline-block; width: 80%;">
+                <el-input :disabled="true" placeholder="萨克大开杀戒打卡金坷垃手机打卡鲸打卡垃圾的卡垃圾费山卡拉鲸打卡垃圾的卡拉萨鲸打卡拉萨鲸打卡啦随机发拉卡萨阿萨德就撒乐凯大街阿里手机打算啦" type="textarea">
+                </el-input>
+            </div><br><br>
+        </el-col>
     </el-row>
-    <el-row :gutter="20">
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="http://www.clfgoodlife.com/Uploads/6544a4dacd62a.jpg" description="Product description: Electric oven household small baking multi-function net celebrity small oven kitchen appliances"></el-empty></div></el-col>
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="http://www.clfgoodlife.com/Uploads/6544a54aaa8c2.jpg" description="Product description: Wholesale Multi-functional Baking Oven Electric Oven Commercial home kitchen appliance pizza bread bakery oven"></el-empty></div></el-col>
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="http://www.clfgoodlife.com/Uploads/6544c1cc564ca.jpg" description="Product description: Power-saving Electric Mini Stand Squeezer Environmental Food Safe Fruits Vegetables Juicer OEM Stainless Steel Norwalk Juice"></el-empty></div></el-col>
-        <el-col :span="5"><div class="grid-content bg-purple"><el-empty image="	http://www.clfgoodlife.com/Uploads/6544c25c348b5.png" description="Product description: Manufacturer Supplier China Cheap Multifunctional Lemon Juicer Extractor Machine"></el-empty></div></el-col>
+    <br>
+    <el-row>
+        <el-col :span="24" style="text-align: left"><div style="display: inline-block;width: 10px; height: 30px; background-color: #1E9FFF"></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style="display: inline-block;font-size: 30px; font-family: 'Microsoft YaHei';"
+        > 公益轨迹
+        </div></el-col>
     </el-row>
-    </div>-->
-    <div style="text-align: center;margin-left: 15%;">
-        <el-row :gutter="20">
-        <span @click="detail(item)" v-for="item in this.lispage" :key="item"><el-col :span="5"><div class="grid-content bg-purple"><el-empty :image=item.purl :description=item.pname >{{item.detail}}</el-empty></div></el-col>
-    </span>
-        </el-row>
-    </div>
-    <!--产品-->
-    <el-link type="danger"></el-link>
+
+    <br>
+    <el-row>
+        <el-col :span="24" style="text-align: left"><div style="display: inline-block;width: 10px; height: 30px; background-color: #1E9FFF"></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style="display: inline-block;font-size: 30px; font-family: 'Microsoft YaHei';"
+        > 服务范围
+        </div></el-col>
+    </el-row>
+
+    <br>
+    <el-row>
+        <el-col :span="24" style="text-align: left"><div style="display: inline-block;width: 10px; height: 30px; background-color: #1E9FFF"></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style="display: inline-block;font-size: 30px; font-family: 'Microsoft YaHei';"
+            > 价值观
+        </div></el-col>
+    </el-row>
+
+    <br>
     <template>
-        <div>
-            <span style="color: darkred;margin-left: 15%;"> <strong>NEW PRODUCTS</strong></span>
-            <el-divider></el-divider>
-        </div>
-    </template>
-
-    <div style="text-align: center;margin-left: 15%;">
-        <el-row :gutter="20">
-        <span @click="detail(item)" style="height: 400px;width: 600px;" v-for="item in this.lispagenew" :key="item"><el-col :span="5"><div class="grid-content bg-purple"><el-empty :image=item.purl :description=item.pname>{{item.detail}}</el-empty></div></el-col>
-    </span>
-        </el-row>
-    </div>
-
-    <div style="text-align: center; background-color: #e5e6e8;height: 400px; color: #070707;opactiy:0.8;"><br><strong>
-        GoodLife company was established in 2023 and is registered in Africa,<br><br>
-        The business scope includes the manufacturing of film and television recording and playback equipment;<br><br>
-        Retail sale of household audio-visual equipment; wholesale of paper products; retail sale of paper products; manufacturing of special equipment for electrical machinery; retail trade of goods (except licensed goods);<br><br>
-        Wholesale trade of goods (except licensed goods); components of general and special instruments,<br><br>
-        Device manufacturing; Special equipment manufacturing for the electronics industry; Wholesale of television equipment and accessories; Television manufacturing; Complete computer manufacturing;<br><br>
-        Computer parts manufacturing; Audio equipment manufacturing; Applied television equipment and other radio and television equipment manufacturing; Electronic components and assembly manufacturing;<br><br>
-        Technology import and export; research and development of electronics, communications and automatic control technology; retail of daily household appliances; sales of general machinery and equipment; manufacturing of calculators and currency-specific equipment;<br><br>
-        Import and export of goods (except for specialized and controlled goods); manufacturing of general labor protection supplies; wholesale of labor protection supplies;<br><br>
-    </strong>
-    </div><br>
-
-
-
-    <!--员工风采-->
-    <template>
-        <div>
-            <span style="color: darkred;margin-left: 15%;"> <strong>STAFF STYLE</strong></span>
-            <el-divider></el-divider>
-        </div>
-    </template>
-    <div style="text-align: center;">
-    <template>
-        <el-carousel :interval="4000" type="card" height="400px">
-            <el-carousel-item v-for="(q,i) in this.emp" :key="q">
+        <el-carousel indicator-position="outside"  height="400px" style="text-align: center;">
+            <el-carousel-item v-for="(item,i) in this.item" :key="i">
                 <el-image
-                        style="width: 100%"
-                        :src=q.purl
+                        style="width: 80%"
+                        :src=item
                 ></el-image>
             </el-carousel-item>
         </el-carousel>
     </template>
+    <div class="demo-image" style="text-align: center;">
+        <div class="block">
+            <el-image
+                    style="width: 80%;height: 200px;"
+                    src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+                    fit="fit"></el-image>
+        </div>
     </div><br>
-    <div style="text-align: center;">
-        <div id="map" style="width: 100%;height: 700px;"></div>
-    </div>
-    <!--logo-->
-    <el-empty image="http://www.clfgoodlife.com/Uploads/654890e3e080a.png" description=" "></el-empty>
-<!--  ----------------------------------------------------------------------------------  -->
+<!--    ---------------------------------->
+            <el-row>
+                    <el-col :span="24">
+                        <div style="text-align: center;">
+                            <div style="border-radius: 20px;background-color: #247FCD;display: inline-block;width: 220px; height: 220px; text-align: center">
+                                <br><br>
+                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                                <span style="font-size: 20px; color: #FFFFFF">家庭妈妈</span><br><span style="color: #FFFFFF">Motherhood</span>
+                            </div>
+                            <div style="border-radius: 20px;background-color: #4CAEDA;display: inline-block;width: 220px; height: 220px;">
+                                <br><br>
+                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                                <span style="font-size: 20px; color: #FFFFFF">稳定住所</span><br><span style="color: #FFFFFF">Home</span>
+                            </div>
+                            <div style="border-radius: 20px;background-color: #77C8E7;display: inline-block;width: 220px; height: 220px;">
+                                <br><br>
+                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                                <span style="font-size: 20px; color: #FFFFFF">兄弟姐妹</span><br><span style="color: #FFFFFF">Brother and Sister</span>
+                            </div>
+                            <div style="border-radius: 20px;background-color: #247FCD;display: inline-block;width: 220px; height: 220px;">
+                                <br><br>
+                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                                <span style="font-size: 20px; color: #FFFFFF">友好社区</span><br><span style="color: #FFFFFF">Friendly Community</span>
+                            </div>
+                            <div style="border-radius: 20px;background-color: #51A048;display: inline-block;width: 220px; height: 220px;">
+                                <br><br>
+                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                                <span style="font-size: 20px; color: #FFFFFF">美好童年</span><br><span style="color: #FFFFFF">Childhood</span>
+                            </div>
+                            <div style="border-radius: 20px;background-color: #51A148;display: inline-block;width: 220px; height: 220px;">
+                                <br><br>
+                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                                <span style="font-size: 20px; color: #FFFFFF">个性教育</span><br><span style="color: #FFFFFF">Education</span>
+                            </div>
+                            <div style="border-radius: 20px;background-color: #6FB164;display: inline-block;width: 220px; height: 220px;">
+                                <br><br>
+                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                                <span style="font-size: 20px; color: #FFFFFF">长情陪伴</span><br><span style="color: #FFFFFF">Accompanied by family</span>
+                            </div>
+                        </div>
+
+                    </el-col>
+
+            </el-row><br>
+    <!--倒数第二栏-->
+    <el-row>
+        <el-col :span="24">
+            <el-row :gutter="20">
+                <el-col :span="6" style="text-align: center;height: 250px;">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <el-tag type="danger">导航</el-tag>
+                        </div>
+                        <div style="text-align: center;height: 250px; font-size: 20px;">
+                            <el-link type="info" disabled>1、简介</el-link><br>
+                            <el-link type="info" disabled>2、公益项目</el-link><br>
+                            <el-link type="info" disabled>3、愿景</el-link><br>
+                            <el-link type="info" disabled>4、实名</el-link><br>
+                            <el-link type="info" disabled>5、价值观</el-link><br>
+                            <el-link type="info" disabled>6、服务范围</el-link><br>
+                            <el-link type="info" disabled>7、公益轨迹</el-link><br>
+                            <el-link type="info" disabled>8、资金管理</el-link><br>
+                            <el-link type="info" disabled>9、部门岗位</el-link><br>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="6" style="text-align: center;height: 250px;">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <el-tag type="danger">工作</el-tag>
+                        </div>
+                        <div style="text-align: center;height: 250px;font-size: 20px;">
+                            <el-link type="info" disabled>1、大众公益</el-link><br>
+                            <el-link type="info" disabled>2、透明公益</el-link><br>
+                            <el-link type="info" disabled>3、阳光公益</el-link><br>
+                            <el-link type="info" disabled>4、责任公益</el-link><br>
+                            <el-link type="info" disabled>5、环保公益</el-link><br>
+                            <el-link type="info" disabled>6、助养公益</el-link><br>
+                            <el-link type="info" disabled>7、赡养公益</el-link><br>
+                            <el-link type="info" disabled>8、爱护公益</el-link><br>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="6" style="text-align: center;height: 250px;">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <el-tag type="danger">志愿者</el-tag>
+                        </div>
+                        <div style="text-align: center;height: 250px;font-size: 20px;">
+                            <el-link type="info" disabled>1、友好社区</el-link><br>
+                            <el-link type="info" disabled>2、个性教育</el-link><br>
+                            <el-link type="info" disabled>3、长期陪伴</el-link><br>
+                            <el-link type="info" disabled>4、稳定住所</el-link><br>
+                            <el-link type="info" disabled>5、儿童教育</el-link><br>
+                            <el-link type="info" disabled>6、家庭关爱</el-link><br>
+                            <el-link type="info" disabled>7、能量传递</el-link>
+                        </div>
+                    </el-card></el-col>
+                <el-col :span="6">
+                    <div style="height: 300px; text-align: center;">
+                        <!--                <el-divider direction="vertical"style="height: 300px;"></el-divider>-->
+                        <el-link type="danger" style="font-size: 30px;">400-100-5678</el-link><br>
+                        8:00-18:00(仅收市话费)<br><br>
+                        <el-button type="danger" icon="el-icon-chat-dot-square">人工客服</el-button><br><br>
+                        <el-link type="danger" style="font-size: 30px;">400-180-8888</el-link><br>
+                        8:00-18:00(仅收市话费)<br><br>
+                        适用于：MIX FOLD、巨屏电视系列<br><br>
+                        <el-button type="danger" icon="el-icon-chat-dot-square">人工客服</el-button>
+                    </div>
+                </el-col>
+            </el-row>
+        </el-col>
+    </el-row><br><br><br>
+
+    <!--  ----------------------------------------------------------------------------------  -->
     <!--底部-->
-    <div style="text-align: center;height: 100px;background-color: #0C0C0C;">
-<br>
-        <el-row>
-            <el-col :span="24" style="color: #FFFFFF"><strong>CONTACT US</strong> </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="24" style="color: #FFFFFF;font-size: 12px;">Contact: Anna Tel: +263781998877 Email: annawang.dreaml1218@gmail.com <br> Address:SHOP 5H,22 ORRSTREET,HARARE <br>
-                China Good Life
+    <div style="text-align: center;height: 200px;background-color: #E9E1E1;">
+        <el-row style="font-size: 18px;text-decoration-color: #8c939d">
+            <el-col :span="8">
+                <br><br>
+                <div>
+                    中文名：爱暖人间公益服务中心
+                </div><br>
+                <div>
+                    成立时间：2009 年
+                </div>
+            </el-col>
+            <el-col :span="8">
+                <br><br>
+                <div>
+                    创始人：陈丽娟
+                </div><br>
+                <div>
+                    单位：陕西省民政厅
+                </div><br>
+                <div>
+                    性质：民非公益组织
+                </div>
+            </el-col>
+            <el-col :span="8">
+                <br><br>
+                <div>
+                    办公地址：西安市雁塔区电子二路80 号7-1-103 室
+                </div><br>
+                <div>
+                    邮编：710065
+                </div>
             </el-col>
         </el-row>
     </div>
-
-    <!--详情页-->
-    <el-dialog
-            title="Detail"
-            :visible.sync="dialogVisible"
-            :fullscreen="true">
-        <el-row :gutter="20">
-            <el-col :span="16"><div class="grid-content bg-purple">
-                <el-image :src=uurl></el-image>
-            </div></el-col>
-            <el-col :span="8"><div class="grid-content bg-purple">
-                <template>
-                    <div>
-                        <span style="color: darkred;margin-left: 15%;"> <strong>{{nname}}</strong></span>
-                        <el-divider></el-divider>
-                    </div>
-                </template>
-                <strong>Pirce :</strong> {{prices}}<br>
-                <strong>{{details}}</strong><br><br><br>
-                <el-button type="primary" icon="el-icon-position" @click="send()" plain>INQUIRY</el-button>
-            </div></el-col>
-        </el-row>
-        <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">return</el-button>
-  </span>
-    </el-dialog>
-    <!--客户信息弹框-->
-
-    <el-dialog
-            title="Send Message"
-            :visible.sync="dialogVisiblec"
-            width="40%">
-
-        <el-form ref="form" :model="form" label-width="130px">
-            <el-form-item label="product name:">
-                <el-input v-model="form.pname"></el-input>
-            </el-form-item>
-            <el-form-item label="Order quantity:">
-                <el-input v-model="form.counts"></el-input>
-            </el-form-item>
-            <el-form-item label="Your Name:">
-                <el-input v-model="form.youname"></el-input>
-            </el-form-item>
-            <el-form-item label="Company name:">
-                <el-input v-model="form.company"></el-input>
-            </el-form-item>
-            <el-form-item label="Address:">
-                <el-input v-model="form.address"></el-input>
-            </el-form-item>
-            <el-form-item label="Phone:">
-                <el-input v-model="form.phone"></el-input>
-            </el-form-item>
-            <el-form-item label="E-mail:">
-                <el-input v-model="form.email"></el-input>
-            </el-form-item>
-            <el-form-item label="Message">
-                <el-input v-model="form.message"></el-input>
-            </el-form-item>
-
-            <el-form-item>
-                <el-button type="primary" @click="onSubmit">Send</el-button>
-            </el-form-item>
-        </el-form>
-
-        <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisiblec = false">return</el-button>
-  </span>
-    </el-dialog>
 
 </div>
 </body>
