@@ -22,13 +22,23 @@
 <!--html代码 -->
 </div>
 <div id="app">
-<!--头部-->
+    <!--头部1-->
+    <div style="background-color: #FFFFFF;">
+            <div class="grid-content bg-purple" style="height: 4%;display: inline-block;text-align: left;background-color: #FFFFFF;position: fixed;z-index: 10000000; width: 70%;top:0; left: 0">21313</div>
+                <div style="display: inline-block;text-align: right;position: fixed;z-index: 10000000; width: 30%;top:0; right: 0">
+                    <el-input placeholder="请输入内容"  class="input-with-select" style="border-radius: 60px;">
+                        <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                </div>
+    </div><br><br>
+
+    <!--头部2-->
     <el-menu
             class="el-menu-demo"
             mode="horizontal"
             background-color="#71A1D2"
             text-color="#FFFFFF"
-            style="height: 40px; font-size: 20px; text-align: center;position: fixed;z-index: 10000000; background-color:#71A1D2;  width: 100%;top:0;left: 0">
+            style="height: 40px; font-size: 20px; text-align: center;position: fixed;z-index: 10000000; background-color:#71A1D2;  width: 100%;top:4%;left: 0">
 
 
         <el-link href="/index" :underline="false" style="color: #FFFFFF;font-size: 15px;">首页</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -45,7 +55,46 @@
 
         <el-link href="/list?p=Ovens" :underline="false" style="color: #FFFFFF;font-size: 15px;">公益轨迹</el-link>&nbsp;&nbsp;&nbsp;&nbsp;
 
-    </el-menu><br><br><br><br><br><br><br><br>
+    </el-menu><br><br>
+    <div class="demo-image" style="text-align: center;">
+        <div class="block">
+            <el-image
+                    style="width: 90%;height: 300px;"
+                    src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+                    fit="fit"></el-image>
+        </div>
+    </div>
+    <el-row :gutter="20" style="text-align: center">
+        <el-col :span="6">
+            <el-card shadow="always">
+                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                <strong style="font-size: 15px">家庭关爱</strong><br>
+                <span>FAMILY CARE</span>
+            </el-card>
+        </el-col>
+        <el-col :span="6">
+            <el-card shadow="always">
+                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                <strong style="font-size: 15px">儿童教育</strong><br>
+                <span>HILDREN' SEDUCATION</span>
+            </el-card>
+        </el-col>
+        <el-col :span="6">
+            <el-card shadow="always">
+                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                <strong style="font-size: 15px"> 青少年赋能</strong><br>
+                <span>THEMPOWERME</span>
+            </el-card>
+        </el-col>
+        <el-col :span="6">
+            <el-card shadow="always">
+                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar><br><br>
+                <strong style="font-size: 15px">职业妈妈培训</strong><br>
+                <span>TRAINING FOR ESSIONAL MOTH</span>
+            </el-card>
+        </el-col>
+    </el-row>
+
     <el-row>
         <el-col :span="24" style="text-align: left"><div style="display: inline-block;width: 10px; height: 30px; background-color: #1E9FFF"></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style="display: inline-block;font-size: 30px; font-family: 'Microsoft YaHei';"
         > 部门岗位
